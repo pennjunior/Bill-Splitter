@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">01XXSTB</string>
+    <string name="total_pay">支払額:</string>
+    <string name="total_pay_hint">金額を入力して下さい\n</string>
+    <string name="number">人数</string>
+    <string name="calc">計算実行</string>
+    <string name="collection_money">集金金額</string>
+    <string name="my_pay">秘書支払額</string>
+    <string name="format_yen">%d円</string>
+    <string-array name="num_list">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
+</resources>
