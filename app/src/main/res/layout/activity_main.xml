@@ -1,104 +1,244 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/title_img" />
+    android:fillViewport="true">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/total_pay" />
-
-        <EditText
-            android:id="@+id/editTotalPay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="@string/total_pay_hint"
-            android:inputType="number" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/number" />
-
-        <Spinner
-            android:id="@+id/spNumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:entries="@array/num_list" />
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/btnCalc"
+        android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/calc" />
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/textView3"
+        <ImageView
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/collection_money" />
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            app:srcCompat="@drawable/title_img" />
 
-        <TextView
-            android:id="@+id/txtCollectPay"
+        <!-- Total Payment -->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/total_pay"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/editTotalPay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:autofillHints="none"
+                android:hint="@string/total_pay_hint"
+                android:inputType="number"
+                android:minHeight="48dp" />
+        </LinearLayout>
+
+        <!-- Number of People -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/number"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/spNumber"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:entries="@array/num_list"
+                android:minHeight="48dp" />
+        </LinearLayout>
+
+        <!-- Rounding Unit Label -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/rounding_unit"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <!-- Rounding Options -->
+        <RadioGroup
+            android:id="@+id/rgRounding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb100"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="@string/rounding_100"
+                android:minHeight="48dp" />
+
+            <RadioButton
+                android:id="@+id/rb500"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rounding_500"
+                android:minHeight="48dp" />
+
+            <RadioButton
+                android:id="@+id/rb1000"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rounding_1000"
+                android:minHeight="48dp" />
+        </RadioGroup>
+
+        <!-- Mode Checkboxes -->
+        <CheckBox
+            android:id="@+id/chkKanjiMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/kanji_mode"
+            android:textSize="16sp"
+            android:minHeight="48dp" />
+
+        <CheckBox
+            android:id="@+id/chkNijiMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/niji_mode"
+            android:textSize="16sp"
+            android:minHeight="48dp" />
+
+        <!-- Calculate Button -->
+        <Button
+            android:id="@+id/btnCalc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:enabled="false"
+            android:text="@string/calc"
+            android:textSize="18sp" />
+
+        <!-- Results Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
+            android:background="#757575" />
+
+        <!-- Collection Money -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:background="#E3F2FD">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/collection_money"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtCollectPay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="0円"
+                android:textColor="#1976D2"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Organizer Payment -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:background="#FFF3E0">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/my_pay"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtMyPay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="0円"
+                android:textColor="#FF6F00"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Second Party Money Section (hidden by default) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:background="#E8F5E9">
+
+            <TextView
+                android:id="@+id/lblNijiMoney"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/niji_money"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/txtNijiMoney"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="0円"
+                android:textColor="#2E7D32"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+        </LinearLayout>
+
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/my_pay" />
-
-        <TextView
-            android:id="@+id/txtMyPay"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-    </LinearLayout>
-
-</LinearLayout>
+</ScrollView>

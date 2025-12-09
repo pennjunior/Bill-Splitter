@@ -1,14 +1,21 @@
 <resources>
-    <string name="app_name">01XXSTB</string>
+    <string name="app_name">割り勘アプリ</string>
     <string name="total_pay">支払額:</string>
-    <string name="total_pay_hint">金額を入力して下さい\n</string>
-    <string name="number">人数</string>
+    <string name="total_pay_hint">金額を入力して下さい</string>
+    <string name="number">人数:</string>
     <string name="calc">計算実行</string>
-    <string name="collection_money">集金金額</string>
-    <string name="my_pay">秘書支払額</string>
+    <string name="collection_money">一人当たりの集金金額:</string>
+    <string name="my_pay">幹事支払金額:</string>
     <string name="format_yen">%d円</string>
+    <string name="rounding_unit">支払端数:</string>
+    <string name="rounding_100">100円</string>
+    <string name="rounding_500">500円</string>
+    <string name="rounding_1000">1000円</string>
+    <string name="kanji_mode">幹事得モード</string>
+    <string name="niji_mode">二次会ありモード</string>
+    <string name="niji_money">二次会へ回す残金:</string>
+
     <string-array name="num_list">
-        <item>1</item>
         <item>2</item>
         <item>3</item>
         <item>4</item>
@@ -17,5 +24,6 @@
         <item>7</item>
         <item>8</item>
         <item>9</item>
+        <item>10</item>
     </string-array>
 </resources>
